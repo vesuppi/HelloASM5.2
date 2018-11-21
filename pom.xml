@@ -4,9 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>idk</groupId>
-    <artifactId>idk</artifactId>
+    <groupId>hello-asm</groupId>
+    <artifactId>hello-asm</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <repositories>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -28,7 +31,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>fully.qualified.MainClass</mainClass>
+                            <mainClass>HelloASM</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

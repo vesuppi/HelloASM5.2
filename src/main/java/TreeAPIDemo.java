@@ -13,13 +13,13 @@ import static java.lang.System.out;
 
 public class TreeAPIDemo {
     public static void testReadClass() {
-        InputStream in= null;
-        try {
-            in = new FileInputStream("test/Foo.class");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        //InputStream in = HelloASM.class.getResourceAsStream("/java/lang/String.class");
+//        InputStream in= null;
+//        try {
+//            in = new FileInputStream("test/Foo.class");
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+        InputStream in = HelloASM.class.getResourceAsStream("/java/lang/String.class");
 
         ClassReader cr= null;
         try {
@@ -41,10 +41,11 @@ public class TreeAPIDemo {
             Iterator<AbstractInsnNode> insnNodes=methodNode.instructions.iterator();
             while(insnNodes.hasNext()){
                 AbstractInsnNode insn = insnNodes.next();
-                //
+                
                 if (insn instanceof MethodInsnNode) {
                     out.println(((MethodInsnNode) insn).name);
-                    System.out.println(insn.getOpcode() + " " + Utils.insnToString(insn));
+                    out.print(insn.getOpcode() + " " + Utils.insnToString(insn));
+                    //out.println(Utils.toString((MethodInsnNode) insn));
                 }
             }
 
