@@ -41,7 +41,7 @@ public class TreeAPIDemo {
             Iterator<AbstractInsnNode> insnNodes=methodNode.instructions.iterator();
             while(insnNodes.hasNext()){
                 AbstractInsnNode insn = insnNodes.next();
-                
+
                 if (insn instanceof MethodInsnNode) {
                     out.println(((MethodInsnNode) insn).name);
                     out.print(insn.getOpcode() + " " + Utils.insnToString(insn));
