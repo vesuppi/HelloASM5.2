@@ -11,10 +11,10 @@ import org.objectweb.asm.Opcodes;
 
 public class HelloASM {
     /**
-     * @param args
+     * @param
      * @throws IOException
      */
-    public static void main(String[] args) throws IOException {
+    public static void hello() throws IOException {
         ClassVisitor cl=new ClassVisitor(Opcodes.ASM5) {
 
             /**
@@ -115,6 +115,10 @@ public class HelloASM {
         ClassReader classReader=new ClassReader(in);
         classReader.accept(cl, 0);
 
+    }
+
+    static public void main(String[] args) {
+        TreeAPIDemo.testReadClass();
     }
 
 }
